@@ -121,6 +121,12 @@
 <h2 th:text="${car.getEurPrice()}+' Евро'"></h2>
 <h3 th:text="${car.getItemModel().getDisc()}"></h3>
 
+<form method="post">
+    <input name="name" type="text" placeholder="Как к вам можно обращаться">
+    <input name="contact" type="text" placeholder="Как с вами можно связаться">
+    <button type="submit">Оставить заявку</button>
+</form>
+
 <footer class="text-muted py-5">
     <div class="container">
         <p class="float-end mb-1">

@@ -21,7 +21,7 @@ public class CurrencyService {
             double course = Double.parseDouble(cur);
             double price = Double.parseDouble(bynPrice);
 
-            return String.valueOf(course*price);
+            return String.valueOf((int)(price/course));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -39,7 +39,7 @@ public class CurrencyService {
             double course = Double.parseDouble(cur);
             double price = Double.parseDouble(bynPrice);
 
-            return String.valueOf(course*price);
+            return String.valueOf((int)(price/course));
 
         } catch (Exception e) {
             e.printStackTrace();

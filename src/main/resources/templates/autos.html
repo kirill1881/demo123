@@ -114,28 +114,33 @@
     </div>
 </header>
 
+<form method="post">
+    <p><input name="n1" type="text" placeholder="Введите минимальную цену"></p>
+    <p><input name="n2" type="text" placeholder="Введите максимальную цену" ></p>
+    <button type="submit">Применить фильтр</button>
+</form>
+
 <div class="album py-5 bg-light">
     <div class="container">
 
         <div class="row">
             <div class="col-md-4" th:each="c:${cars}">
-<div class="card mb-4 box-shadow">
-    <img class="card-img-top" th:src="${c.getImage()}"
-         alt="Thumbnail [100%x225]"  data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
-    <div class="card-body">
-        <p class="card-text" th:text="${c.getName()}"></p>
-        <p class="card-text" th:text="${c.getPrice()}"></p>
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" th:src="${c.getImage()}"
+                         alt="Thumbnail [100%x225]"  data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                    <div class="card-body">
+                        <p class="card-text" th:text="${c.getName()}"></p>
+                        <p class="card-text" th:text="${c.getPrice()}"></p>
 
-        <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-                <a th:href="'/detailCar/'+${c.getId()}" type="button" class="btn btn-sm btn-outline-secondary">Подробнее</a>
-                <a th:href="'/editcar/'+${c.getId()}" type="button" class="btn btn-sm btn-outline-secondary">Изменить</a>
-                <a th:href="'/deletcar/'+${c.getId()}" type="button" class="btn btn-sm btn-outline-secondary">Удалить</a>
-            </div>
-            <small class="text-muted">9 mins</small>
-        </div>
-    </div>
-</div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a th:href="'/detailCar/'+${c.getId()}" type="button" class="btn btn-sm btn-outline-secondary">Подробнее</a>
+                                <a th:href="'/editcar/'+${c.getId()}" type="button" class="btn btn-sm btn-outline-secondary">Изменить</a>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

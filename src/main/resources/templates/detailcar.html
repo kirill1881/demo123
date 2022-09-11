@@ -114,10 +114,12 @@
     </div>
 </header>
 
-<h1 th:text="${car.getName()}"></h1>
-<img th:src="${car.getImage()}">
-<h2 th:text="${car.getPrice()}"></h2>
-<h3 th:text="${car.getDisc()}"></h3>
+<h1 th:text="${car.getItemModel().getName()}"></h1>
+<img th:src="${car.getItemModel().getImage()}">
+<h2 th:text="${car.getItemModel().getPrice()}+' Рублей'"></h2>
+<h2 th:text="${car.getUsdPrise()}+' Долларов США'"></h2>
+<h2 th:text="${car.getEurPrice()}+' Евро'"></h2>
+<h3 th:text="${car.getItemModel().getDisc()}"></h3>
 
 <footer class="text-muted py-5">
     <div class="container">

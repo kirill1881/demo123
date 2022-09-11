@@ -1,5 +1,6 @@
 package com.example.demo123.controllers;
 
+import com.example.demo123.helpers.DetailModel;
 import com.example.demo123.models.ItemModel;
 import com.example.demo123.repos.ItemRepo;
 import com.example.demo123.servise.CurrencyService;
@@ -29,9 +30,11 @@ public class DetailCarController {
         List<ItemModel> list = new ArrayList<>();
         itemModel.ifPresent(list::add);
         ItemModel itemModel1 = list.get(0);
-        model.addAttribute("car", itemModel1);
-        System.out.println(currencyService.getUSD(itemModel1.getPrice()));
-        System.out.println(currencyService.getEUR(itemModel1.getPrice()));
+        DetailModel detailModel = new DetailModel();
+        detailModel.setItemModel(itemModel1);
+        detailModel.setUsdPrise(currencyService.getUSD(itemModel1.getPrice()));
+        detailModel.setEurPrice(currencyService.getEUR(itemModel1.getPrice()));
+        model.addAttribute("car", detailModel);
         return "detailcar";
     }
 }
